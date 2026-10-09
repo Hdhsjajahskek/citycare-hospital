@@ -12,7 +12,7 @@ export function BpChecker() {
 
   if (systolic < 90 || diastolic < 60) {
     category = "Low blood pressure";
-    color = "#38bdf8";
+    color = "#5B6EF5";
     advice = "Stay hydrated. Consult a doctor if you feel dizzy.";
   } else if (systolic < 120 && diastolic < 80) {
     category = "Normal";
@@ -28,26 +28,26 @@ export function BpChecker() {
     advice = "Book a consultation. Lifestyle changes needed.";
   } else {
     category = "Stage 2 Hypertension";
-    color = "#ff2d00";
+    color = "#ef4444";
     advice = "Book a consultation with our doctor urgently.";
   }
 
   return (
-    <div className="rounded-2xl border border-[#1e252b] bg-[#0e1215] p-8">
-      <p className="mb-2 font-mono text-xs tracking-widest text-[#0ea5a0]">
+    <div className="rounded-2xl border border-[#252D45] bg-[#151B2E] p-8">
+      <p className="mb-2 font-mono text-xs tracking-widest text-[#A78BFA]">
         BLOOD PRESSURE CHECKER
       </p>
-      <h3 className="mb-8 text-2xl font-bold">
+      <h3 className="mb-8 text-2xl font-bold text-white">
         Check your blood pressure range.
       </h3>
 
       <div className="space-y-8">
         <div>
           <div className="mb-3 flex items-center justify-between">
-            <label className="font-mono text-xs tracking-widest text-[#7e8a93]">
+            <label className="font-mono text-xs tracking-widest text-[#8892B0]">
               SYSTOLIC (TOP)
             </label>
-            <span className="font-mono text-sm text-[#0ea5a0]">
+            <span className="font-mono text-sm text-[#5B6EF5]">
               {systolic} mmHg
             </span>
           </div>
@@ -57,16 +57,16 @@ export function BpChecker() {
             max={200}
             value={systolic}
             onChange={(e) => setSystolic(Number(e.target.value))}
-            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-[#1e252b] accent-[#0ea5a0]"
+            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-[#1E2742] accent-[#5B6EF5]"
           />
         </div>
 
         <div>
           <div className="mb-3 flex items-center justify-between">
-            <label className="font-mono text-xs tracking-widest text-[#7e8a93]">
+            <label className="font-mono text-xs tracking-widest text-[#8892B0]">
               DIASTOLIC (BOTTOM)
             </label>
-            <span className="font-mono text-sm text-[#0ea5a0]">
+            <span className="font-mono text-sm text-[#5B6EF5]">
               {diastolic} mmHg
             </span>
           </div>
@@ -76,7 +76,7 @@ export function BpChecker() {
             max={130}
             value={diastolic}
             onChange={(e) => setDiastolic(Number(e.target.value))}
-            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-[#1e252b] accent-[#0ea5a0]"
+            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-[#1E2742] accent-[#5B6EF5]"
           />
         </div>
 
@@ -84,7 +84,7 @@ export function BpChecker() {
           className="rounded-xl border p-6 text-center"
           style={{ borderColor: `${color}40`, background: `${color}10` }}
         >
-          <p className="mb-2 font-mono text-xs tracking-widest text-[#7e8a93]">
+          <p className="mb-2 font-mono text-xs tracking-widest text-[#8892B0]">
             READING
           </p>
           <p className="text-4xl font-bold" style={{ color }}>
@@ -93,12 +93,12 @@ export function BpChecker() {
           <p className="mt-3 text-sm font-medium" style={{ color }}>
             {category}
           </p>
-          <p className="mt-3 text-xs text-[#7e8a93]">{advice}</p>
+          <p className="mt-3 text-xs text-[#8892B0]">{advice}</p>
         </div>
 
         <a
           href="#book"
-          className="block w-full rounded-full bg-[#0ea5a0] py-3 text-center font-semibold text-white transition hover:bg-[#14b8b2]"
+          className="block w-full rounded-full bg-gradient-to-r from-[#5B6EF5] to-[#6B7FFF] py-3 text-center font-semibold text-white transition hover:from-[#6B7FFF] hover:to-[#8B9FFF]"
         >
           BOOK A HEALTH CHECKUP →
         </a>

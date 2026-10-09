@@ -6,7 +6,6 @@ export function IdealWeightCalculator() {
   const [height, setHeight] = useState(170);
   const [gender, setGender] = useState<"male" | "female">("male");
 
-  // Devine formula
   const heightInches = height / 2.54;
   const base = gender === "male" ? 50 : 45.5;
   const ideal = base + 2.3 * (heightInches - 60);
@@ -14,11 +13,11 @@ export function IdealWeightCalculator() {
   const maxWeight = Math.round(ideal * 1.1);
 
   return (
-    <div className="rounded-2xl border border-[#1e252b] bg-[#0e1215] p-8">
-      <p className="mb-2 font-mono text-xs tracking-widest text-[#0ea5a0]">
+    <div className="rounded-2xl border border-[#252D45] bg-[#151B2E] p-8">
+      <p className="mb-2 font-mono text-xs tracking-widest text-[#A78BFA]">
         IDEAL WEIGHT
       </p>
-      <h3 className="mb-8 text-2xl font-bold">
+      <h3 className="mb-8 text-2xl font-bold text-white">
         Find your healthy weight range.
       </h3>
 
@@ -28,8 +27,8 @@ export function IdealWeightCalculator() {
             onClick={() => setGender("male")}
             className={`rounded-lg border py-3 text-sm font-medium transition ${
               gender === "male"
-                ? "border-[#0ea5a0] bg-[#0ea5a0]/10 text-[#0ea5a0]"
-                : "border-[#1e252b] text-[#7e8a93]"
+                ? "border-[#5B6EF5] bg-[#5B6EF5]/10 text-[#5B6EF5]"
+                : "border-[#252D45] text-[#8892B0]"
             }`}
           >
             Male
@@ -38,8 +37,8 @@ export function IdealWeightCalculator() {
             onClick={() => setGender("female")}
             className={`rounded-lg border py-3 text-sm font-medium transition ${
               gender === "female"
-                ? "border-[#0ea5a0] bg-[#0ea5a0]/10 text-[#0ea5a0]"
-                : "border-[#1e252b] text-[#7e8a93]"
+                ? "border-[#5B6EF5] bg-[#5B6EF5]/10 text-[#5B6EF5]"
+                : "border-[#252D45] text-[#8892B0]"
             }`}
           >
             Female
@@ -48,10 +47,10 @@ export function IdealWeightCalculator() {
 
         <div>
           <div className="mb-3 flex items-center justify-between">
-            <label className="font-mono text-xs tracking-widest text-[#7e8a93]">
+            <label className="font-mono text-xs tracking-widest text-[#8892B0]">
               HEIGHT (CM)
             </label>
-            <span className="font-mono text-sm text-[#0ea5a0]">{height}</span>
+            <span className="font-mono text-sm text-[#5B6EF5]">{height}</span>
           </div>
           <input
             type="range"
@@ -59,23 +58,23 @@ export function IdealWeightCalculator() {
             max={220}
             value={height}
             onChange={(e) => setHeight(Number(e.target.value))}
-            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-[#1e252b] accent-[#0ea5a0]"
+            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-[#1E2742] accent-[#5B6EF5]"
           />
         </div>
 
         <div className="rounded-xl border border-[#10b981]/40 bg-[#10b981]/10 p-6 text-center">
-          <p className="mb-2 font-mono text-xs tracking-widest text-[#7e8a93]">
+          <p className="mb-2 font-mono text-xs tracking-widest text-[#8892B0]">
             HEALTHY RANGE
           </p>
           <p className="text-4xl font-bold text-[#10b981]">
             {minWeight}–{maxWeight}
           </p>
-          <p className="mt-2 text-sm text-[#7e8a93]">kilograms</p>
+          <p className="mt-2 text-sm text-[#8892B0]">kilograms</p>
         </div>
 
         <a
           href="#book"
-          className="block w-full rounded-full bg-[#0ea5a0] py-3 text-center font-semibold text-white transition hover:bg-[#14b8b2]"
+          className="block w-full rounded-full bg-gradient-to-r from-[#5B6EF5] to-[#6B7FFF] py-3 text-center font-semibold text-white transition hover:from-[#6B7FFF] hover:to-[#8B9FFF]"
         >
           GET A NUTRITION PLAN →
         </a>

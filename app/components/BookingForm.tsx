@@ -2,14 +2,16 @@
 
 import { useState } from "react";
 
-const SERVICES = [
+const DEPARTMENTS = [
   "General Consultation",
-  "Dental Checkup",
-  "Dental Cleaning",
-  "Root Canal",
-  "Teeth Whitening",
-  "Orthodontics / Braces",
-  "Emergency Care",
+  "Cardiology",
+  "Orthopaedics",
+  "Obstetrics & Gynaecology",
+  "Pediatrics",
+  "Dermatology",
+  "Dental Care",
+  "Pathology & Diagnostics",
+  "Emergency",
   "Other",
 ];
 
@@ -18,7 +20,7 @@ export function BookingForm() {
     name: "",
     phone: "",
     email: "",
-    service: SERVICES[0],
+    service: DEPARTMENTS[0],
     preferred_date: "",
     preferred_time: "Morning (9 AM - 12 PM)",
     notes: "",
@@ -45,32 +47,32 @@ export function BookingForm() {
   }
 
   if (submitted) {
-    const message = `Hi CareFirst Clinic, I just booked an appointment.
+    const message = `Hi CityCare Hospital, I just booked an appointment.
 
 Name: ${form.name}
 Phone: ${form.phone}
 Email: ${form.email}
-Service: ${form.service}
+Department: ${form.service}
 Date: ${form.preferred_date || "Not specified"}
 Time: ${form.preferred_time}
 ${form.notes ? `Notes: ${form.notes}` : ""}
 
 Please confirm my appointment.`;
 
-    const whatsappUrl = `https://wa.me/919999999999?text=${encodeURIComponent(
+    const whatsappUrl = `https://wa.me/919837012345?text=${encodeURIComponent(
       message
     )}`;
 
     return (
       <div className="space-y-6">
-        <div className="rounded-2xl border border-[#0ea5a0]/30 bg-[#0ea5a0]/5 p-8 text-center md:p-12">
-          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#0ea5a0] text-3xl text-white">
+        <div className="rounded-2xl border border-[#5B6EF5]/30 bg-[#5B6EF5]/5 p-8 text-center md:p-12">
+          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#5B6EF5] to-[#A78BFA] text-3xl text-white">
             ✓
           </div>
           <h3 className="mb-2 text-2xl font-bold text-white">
             Appointment booked!
           </h3>
-          <p className="mx-auto max-w-md text-[#7e8a93]">
+          <p className="mx-auto max-w-md text-[#8892B0]">
             We&apos;ll WhatsApp you within 5 minutes to confirm your slot.
             Please arrive 10 minutes early.
           </p>
@@ -85,7 +87,7 @@ Please confirm my appointment.`;
           SEND CONFIRMATION ON WHATSAPP →
         </a>
 
-        <p className="text-center text-xs text-[#7e8a93]">
+        <p className="text-center text-xs text-[#8892B0]">
           This is a demo. The real version stores bookings and sends automated
           alerts.
         </p>
@@ -97,7 +99,7 @@ Please confirm my appointment.`;
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
         <div>
-          <label className="mb-2 block font-mono text-xs tracking-widest text-[#7e8a93]">
+          <label className="mb-2 block font-mono text-xs tracking-widest text-[#8892B0]">
             NAME
           </label>
           <input
@@ -110,7 +112,7 @@ Please confirm my appointment.`;
           />
         </div>
         <div>
-          <label className="mb-2 block font-mono text-xs tracking-widest text-[#7e8a93]">
+          <label className="mb-2 block font-mono text-xs tracking-widest text-[#8892B0]">
             PHONE
           </label>
           <input
@@ -126,7 +128,7 @@ Please confirm my appointment.`;
       </div>
 
       <div>
-        <label className="mb-2 block font-mono text-xs tracking-widest text-[#7e8a93]">
+        <label className="mb-2 block font-mono text-xs tracking-widest text-[#8892B0]">
           EMAIL
         </label>
         <input
@@ -140,15 +142,15 @@ Please confirm my appointment.`;
       </div>
 
       <div>
-        <label className="mb-2 block font-mono text-xs tracking-widest text-[#7e8a93]">
-          SERVICE NEEDED
+        <label className="mb-2 block font-mono text-xs tracking-widest text-[#8892B0]">
+          DEPARTMENT
         </label>
         <select
           value={form.service}
           onChange={(e) => setForm({ ...form, service: e.target.value })}
           className="input-field"
         >
-          {SERVICES.map((s) => (
+          {DEPARTMENTS.map((s) => (
             <option key={s} value={s}>
               {s}
             </option>
@@ -158,7 +160,7 @@ Please confirm my appointment.`;
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
         <div>
-          <label className="mb-2 block font-mono text-xs tracking-widest text-[#7e8a93]">
+          <label className="mb-2 block font-mono text-xs tracking-widest text-[#8892B0]">
             PREFERRED DATE
           </label>
           <input
@@ -171,7 +173,7 @@ Please confirm my appointment.`;
           />
         </div>
         <div>
-          <label className="mb-2 block font-mono text-xs tracking-widest text-[#7e8a93]">
+          <label className="mb-2 block font-mono text-xs tracking-widest text-[#8892B0]">
             PREFERRED TIME
           </label>
           <select
@@ -189,7 +191,7 @@ Please confirm my appointment.`;
       </div>
 
       <div>
-        <label className="mb-2 block font-mono text-xs tracking-widest text-[#7e8a93]">
+        <label className="mb-2 block font-mono text-xs tracking-widest text-[#8892B0]">
           NOTES (OPTIONAL)
         </label>
         <textarea
@@ -202,13 +204,13 @@ Please confirm my appointment.`;
       </div>
 
       {error && (
-        <p className="font-mono text-sm text-[#ff2d00]">{error}</p>
+        <p className="font-mono text-sm text-[#ef4444]">{error}</p>
       )}
 
       <button
         type="submit"
         disabled={loading}
-        className="flex w-full items-center justify-center gap-3 rounded-full bg-[#0ea5a0] py-4 font-semibold text-white transition hover:bg-[#14b8b2] hover:shadow-[0_0_30px_-5px_#0ea5a0] hover:-translate-y-0.5 disabled:opacity-50 disabled:hover:translate-y-0"
+        className="flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#5B6EF5] to-[#6B7FFF] py-4 font-semibold text-white transition hover:from-[#6B7FFF] hover:to-[#8B9FFF] hover:shadow-[0_0_30px_-5px_#5B6EF5] hover:-translate-y-0.5 disabled:opacity-50 disabled:hover:translate-y-0"
       >
         {loading && (
           <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
@@ -216,7 +218,7 @@ Please confirm my appointment.`;
         {loading ? "Booking..." : "BOOK APPOINTMENT →"}
       </button>
 
-      <p className="text-center text-xs text-[#7e8a93]">
+      <p className="text-center text-xs text-[#8892B0]">
         We&apos;ll confirm on WhatsApp within 5 minutes.
       </p>
     </form>

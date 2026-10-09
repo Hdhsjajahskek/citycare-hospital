@@ -37,17 +37,17 @@ export function PregnancyCalculator() {
   })();
 
   return (
-    <div className="rounded-2xl border border-[#1e252b] bg-[#0e1215] p-8">
-      <p className="mb-2 font-mono text-xs tracking-widest text-[#0ea5a0]">
+    <div className="rounded-2xl border border-[#252D45] bg-[#151B2E] p-8">
+      <p className="mb-2 font-mono text-xs tracking-widest text-[#A78BFA]">
         PREGNANCY CALCULATOR
       </p>
-      <h3 className="mb-8 text-2xl font-bold">
+      <h3 className="mb-8 text-2xl font-bold text-white">
         Track your pregnancy timeline.
       </h3>
 
       <div className="space-y-6">
         <div>
-          <label className="mb-3 block font-mono text-xs tracking-widest text-[#7e8a93]">
+          <label className="mb-3 block font-mono text-xs tracking-widest text-[#8892B0]">
             FIRST DAY OF LAST PERIOD
           </label>
           <input
@@ -60,32 +60,32 @@ export function PregnancyCalculator() {
 
         {result && result.isValid && (
           <div className="space-y-4">
-            <div className="rounded-xl border border-[#0ea5a0]/40 bg-[#0ea5a0]/10 p-6 text-center">
-              <p className="mb-2 font-mono text-xs tracking-widest text-[#7e8a93]">
+            <div className="rounded-xl border border-[#5B6EF5]/40 bg-[#5B6EF5]/10 p-6 text-center">
+              <p className="mb-2 font-mono text-xs tracking-widest text-[#8892B0]">
                 YOU ARE
               </p>
-              <p className="text-5xl font-bold text-[#0ea5a0]">
+              <p className="text-5xl font-bold text-[#5B6EF5]">
                 {result.weeks}
                 <span className="text-2xl">w</span> {result.days}
                 <span className="text-2xl">d</span>
               </p>
-              <p className="mt-3 text-sm text-[#0ea5a0]">
+              <p className="mt-3 text-sm text-[#5B6EF5]">
                 {result.trimester}
               </p>
             </div>
 
-            <div className="rounded-xl border border-[#38bdf8]/40 bg-[#38bdf8]/10 p-6 text-center">
-              <p className="mb-2 font-mono text-xs tracking-widest text-[#7e8a93]">
+            <div className="rounded-xl border border-[#A78BFA]/40 bg-[#A78BFA]/10 p-6 text-center">
+              <p className="mb-2 font-mono text-xs tracking-widest text-[#8892B0]">
                 ESTIMATED DUE DATE
               </p>
-              <p className="text-2xl font-bold text-[#38bdf8]">
+              <p className="text-2xl font-bold text-[#A78BFA]">
                 {result.dueDate}
               </p>
             </div>
 
             <a
               href="#book"
-              className="block w-full rounded-full bg-[#0ea5a0] py-3 text-center font-semibold text-white transition hover:bg-[#14b8b2]"
+              className="block w-full rounded-full bg-gradient-to-r from-[#5B6EF5] to-[#6B7FFF] py-3 text-center font-semibold text-white transition hover:from-[#6B7FFF] hover:to-[#8B9FFF]"
             >
               BOOK PRENATAL CONSULTATION →
             </a>
@@ -93,7 +93,7 @@ export function PregnancyCalculator() {
         )}
 
         {!result && (
-          <p className="text-center text-sm text-[#7e8a93]">
+          <p className="text-center text-sm text-[#8892B0]">
             Enter your last period date to see your timeline.
           </p>
         )}
